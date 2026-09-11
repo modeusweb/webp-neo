@@ -7,7 +7,7 @@
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
-      <image:loc>https://webp-neo.vercel.app/og-image.svg</image:loc>
+      <image:loc>https://webp-neo.vercel.app/og-image.png</image:loc>
       <image:title>WebP Neo — Free Image to WebP Converter</image:title>
     </image:image>
   </url>
