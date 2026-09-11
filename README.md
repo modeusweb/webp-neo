@@ -6,6 +6,8 @@ Convert PNG, JPG, BMP, GIF, AVIF and TIFF images to WebP without uploading anyth
 
 ![WebP Neo](https://img.shields.io/badge/WebP-Neo-8b5cf6?style=flat-square) ![License](https://img.shields.io/badge/license-MIT-green?style=flat-square) ![Free](https://img.shields.io/badge/price-free-10a34f?style=flat-square)
 
+> **🚀 Live demo: [webp-neo.vercel.app](https://webp-neo.vercel.app/)**
+
 ---
 
 ## Features
@@ -107,12 +109,6 @@ WebP Neo is completely free to use. If you find it helpful and would like to sup
 **USDT (TRC-20):** `TQZxZ2Ygh6RvkZDi5qswq8uF9KbDbDw9bo`
 
 Any support is greatly appreciated and helps keep the project running — thank you!
-
----
-
-## Demo
-
-Live demo is available at: **https://webp-neo.vercel.app/**
 
 ---
 
