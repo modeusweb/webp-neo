@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://webp-neo.vercel.app/sitemap.xml

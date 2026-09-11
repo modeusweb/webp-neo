@@ -141,6 +141,25 @@ Contributions are welcome! Here's how you can help:
 
 ---
 
+## Frequently Asked Questions
+
+### Is WebP Neo really free?
+Yes! WebP Neo is 100% free with no hidden fees, no sign-up required, and no usage limits.
+
+### Is my data safe?
+Absolutely. All image processing happens locally in your browser. Your files never leave your device — no uploads to any server.
+
+### What image formats are supported?
+WebP Neo supports conversion from PNG, JPG, BMP, GIF, AVIF, and TIFF to WebP format.
+
+### Can I convert multiple files at once?
+Yes! You can batch convert up to 30 files at once, with a total limit of 200 MB.
+
+### Why convert to WebP?
+WebP images are typically 25-35% smaller than PNG or JPG while maintaining the same visual quality, making them perfect for web use.
+
+---
+
 ## License
 
 MIT
