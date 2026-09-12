@@ -134,6 +134,9 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+  verification: {
+    google: 'w_s1YAdGDmNMm19tV4F6fl_4o15nDgnZGLM8ledX-f8',
+  },
   openGraph: {
     type: 'website',
     locale: 'en_US',
