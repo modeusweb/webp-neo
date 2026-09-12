@@ -136,6 +136,7 @@ export const metadata: Metadata = {
   },
   verification: {
     google: 'w_s1YAdGDmNMm19tV4F6fl_4o15nDgnZGLM8ledX-f8',
+    yandex: 'e2441bdf3afdb12f',
   },
   openGraph: {
     type: 'website',
