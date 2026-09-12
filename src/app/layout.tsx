@@ -165,10 +165,21 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       {
+        url: '/favicon.ico',
+        sizes: 'any',
+        type: 'image/x-icon',
+      },
+      {
+        url: '/favicon-120x120.png',
+        sizes: '120x120',
+        type: 'image/png',
+      },
+      {
         url: '/favicon.svg',
         type: 'image/svg+xml',
       },
     ],
+    shortcut: '/favicon.ico',
     apple: '/apple-touch-icon.png',
   },
 };
