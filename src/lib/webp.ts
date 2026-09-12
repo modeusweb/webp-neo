@@ -1,4 +1,3 @@
-import { encode } from '@stacksjs/ts-webp';
 import { clamp } from './format';
 
 /**
@@ -80,10 +79,15 @@ async function blobFromNativeCanvas(
 
 /* --- TypeScript encoder (@stacksjs/ts-webp) --- */
 
-function encodeWithJsEncoder(
+async function encodeWithJsEncoder(
   canvas: HTMLCanvasElement,
   quality: number,
-): Blob {
+): Promise<Blob> {
+  // The pure-TypeScript encoder is loaded lazily — the vast majority of
+  // browsers use the native canvas.toBlob path, so we keep this fallback
+  // out of the main bundle until it is actually needed.
+  const { encode } = await import('@stacksjs/ts-webp');
+
   const ctx = canvas.getContext('2d');
   if (!ctx) throw new Error('Failed to get image pixels.');
 

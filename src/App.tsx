@@ -323,9 +323,9 @@ export default function App() {
             W
           </div>
           <h1 className="mt-5 text-3xl font-bold tracking-tight sm:text-4xl">
-            WebP
-            <span className="bg-gradient-to-r from-violet-400 to-fuchsia-400 bg-clip-text text-transparent">
-              Neo
+            WebP Neo — Free Image to{' '}
+            <span className="block bg-gradient-to-r from-violet-400 to-fuchsia-400 bg-clip-text text-transparent">
+              WebP Converter
             </span>
           </h1>
           <p className="mx-auto mt-3 max-w-2xl text-sm text-slate-400 sm:text-base">
@@ -555,6 +555,155 @@ export default function App() {
               Add images and hit “Convert” — free, private, no sign-up
             </p>
           )}
+
+          {/* ---- SEO content ---- */}
+          <section
+            aria-labelledby="why-webp"
+            className="rounded-2xl border border-white/10 bg-white/[0.04] p-6 shadow-xl shadow-slate-900/40 backdrop-blur-md"
+          >
+            <h2
+              id="why-webp"
+              className="text-lg font-bold tracking-tight text-slate-100"
+            >
+              Why convert images to WebP?
+            </h2>
+            <p className="mt-2 text-sm leading-relaxed text-slate-400">
+              WebP is a modern image format that keeps websites fast. Photos in
+              WebP are typically 25–35% smaller than JPEG or PNG files at the
+              same visual quality, and lossless WebP with transparency support
+              works as a drop-in upgrade for PNG as well.
+            </p>
+            <ul className="mt-4 grid gap-2 text-sm text-slate-300 sm:grid-cols-3">
+              <li>
+                <span className="font-semibold text-slate-100">
+                  Smaller files.
+                </span>{' '}
+                Save up to 30% bandwidth without losing quality.
+              </li>
+              <li>
+                <span className="font-semibold text-slate-100">
+                  Full browser support.
+                </span>{' '}
+                Works in Chrome, Edge, Firefox, Safari and more.
+              </li>
+              <li>
+                <span className="font-semibold text-slate-100">
+                  One format, many uses.
+                </span>{' '}
+                Lossy, lossless and transparent images in a single format.
+              </li>
+            </ul>
+          </section>
+
+          <section
+            aria-labelledby="how-to-convert"
+            className="rounded-2xl border border-white/10 bg-white/[0.04] p-6 shadow-xl shadow-slate-900/40 backdrop-blur-md"
+          >
+            <h2
+              id="how-to-convert"
+              className="text-lg font-bold tracking-tight text-slate-100"
+            >
+              How to convert PNG, JPG, GIF, AVIF or TIFF to WebP
+            </h2>
+            <ol className="mt-4 list-decimal space-y-2 pl-5 text-sm leading-relaxed text-slate-400">
+              <li>
+                <span className="font-semibold text-slate-200">
+                  Add your images
+                </span>{' '}
+                — drag and drop files anywhere on this page, or click to choose
+                them from your device.
+              </li>
+              <li>
+                <span className="font-semibold text-slate-200">
+                  Adjust quality and size
+                </span>{' '}
+                — pick compression quality from 30% to 100% and, if needed, cap
+                the longer side of the image to keep files small.
+              </li>
+              <li>
+                <span className="font-semibold text-slate-200">
+                  Convert and download
+                </span>{' '}
+                — press Convert; the WebP files are ready in seconds, and you
+                can grab them one by one or as a single ZIP archive.
+              </li>
+            </ol>
+          </section>
+
+          <section
+            aria-labelledby="faq"
+            className="rounded-2xl border border-white/10 bg-white/[0.04] p-6 shadow-xl shadow-slate-900/40 backdrop-blur-md"
+          >
+            <h2
+              id="faq"
+              className="text-lg font-bold tracking-tight text-slate-100"
+            >
+              Frequently asked questions
+            </h2>
+            <div className="mt-2">
+              <details className="group border-b border-white/10 py-3">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-3 text-sm font-semibold text-slate-200 transition-colors hover:text-violet-300 [&::-webkit-details-marker]:hidden">
+                  <span>Is WebP Neo really free?</span>
+                  <span className="shrink-0 text-slate-500 transition-transform group-open:rotate-45">
+                    +
+                  </span>
+                </summary>
+                <p className="mt-2 pr-8 text-sm leading-relaxed text-slate-400">
+                  Yes — 100% free, with no sign-up, no watermark and no usage
+                  limits. All processing happens in your browser.
+                </p>
+              </details>
+              <details className="group border-b border-white/10 py-3">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-3 text-sm font-semibold text-slate-200 transition-colors hover:text-violet-300 [&::-webkit-details-marker]:hidden">
+                  <span>Is converting with WebP Neo private?</span>
+                  <span className="shrink-0 text-slate-500 transition-transform group-open:rotate-45">
+                    +
+                  </span>
+                </summary>
+                <p className="mt-2 pr-8 text-sm leading-relaxed text-slate-400">
+                  Absolutely. Images are processed locally on your device and
+                  are never uploaded — your files never leave your computer.
+                </p>
+              </details>
+              <details className="group border-b border-white/10 py-3">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-3 text-sm font-semibold text-slate-200 transition-colors hover:text-violet-300 [&::-webkit-details-marker]:hidden">
+                  <span>Which formats can be converted?</span>
+                  <span className="shrink-0 text-slate-500 transition-transform group-open:rotate-45">
+                    +
+                  </span>
+                </summary>
+                <p className="mt-2 pr-8 text-sm leading-relaxed text-slate-400">
+                  PNG, JPG, BMP, GIF, AVIF and TIFF — all of them convert to
+                  WebP.
+                </p>
+              </details>
+              <details className="group border-b border-white/10 py-3">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-3 text-sm font-semibold text-slate-200 transition-colors hover:text-violet-300 [&::-webkit-details-marker]:hidden">
+                  <span>Can I convert multiple files at once?</span>
+                  <span className="shrink-0 text-slate-500 transition-transform group-open:rotate-45">
+                    +
+                  </span>
+                </summary>
+                <p className="mt-2 pr-8 text-sm leading-relaxed text-slate-400">
+                  Yes — up to 30 files per batch, 50 MB per file and 200 MB
+                  total, with a single-click ZIP download afterwards.
+                </p>
+              </details>
+              <details className="group py-3">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-3 text-sm font-semibold text-slate-200 transition-colors hover:text-violet-300 [&::-webkit-details-marker]:hidden">
+                  <span>Why use WebP instead of PNG or JPG?</span>
+                  <span className="shrink-0 text-slate-500 transition-transform group-open:rotate-45">
+                    +
+                  </span>
+                </summary>
+                <p className="mt-2 pr-8 text-sm leading-relaxed text-slate-400">
+                  WebP images are typically 25–35% smaller than PNG or JPG at
+                  the same visual quality, so pages load faster and bandwidth
+                  costs drop.
+                </p>
+              </details>
+            </div>
+          </section>
         </main>
 
         {/* Support the project */}
