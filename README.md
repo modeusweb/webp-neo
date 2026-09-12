@@ -28,8 +28,9 @@ Convert PNG, JPG, BMP, GIF, AVIF and TIFF images to WebP without uploading anyth
 
 | Layer | Technology |
 |---|---|
-| Framework | React 19 + TypeScript 7 |
-| Build | Vite 8 |
+| Framework | Next.js 16 (App Router) + React 19 + TypeScript 7 |
+| Rendering | Full SSR / SSG — content is server-rendered for SEO, the converter is a client component |
+| Build | Next.js (Turbopack) |
 | Styling | Tailwind CSS 4 |
 | Icons | Heroicons |
 | WebP encoding | Native `canvas.toBlob` + `@stacksjs/ts-webp` fallback |
@@ -69,12 +70,12 @@ Open [http://localhost:5173](http://localhost:5173) in your browser.
 npm run build
 ```
 
-The built files will be in the `dist/` directory.
+The optimized build is generated into the `.next/` directory.
 
-### Preview Production Build
+### Run the Production Server
 
 ```bash
-npm run preview
+npm run start
 ```
 
 ---
