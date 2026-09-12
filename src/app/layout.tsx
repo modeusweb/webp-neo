@@ -79,13 +79,53 @@ const faqSchema = {
         text: 'WebP files are typically 25-35% smaller than PNG or JPG at the same visual quality, which makes pages load faster and saves bandwidth.',
       },
     },
+    {
+      '@type': 'Question',
+      name: 'Does WebP support transparency?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. WebP supports an alpha channel, so transparent PNG graphics keep their transparency after conversion.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Is WebP supported in all browsers?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. Chrome, Edge, Firefox, Safari and every major browser have supported WebP since 2020, so the format can be used anywhere on the web.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Does WebP Neo work offline?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'The converter runs entirely in your browser — files are never uploaded, and once the page is loaded, conversion works even without a connection.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What are the file size limits?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Each file can be up to 50 MB, with a maximum of 30 files and 200 MB total per batch — enough for full photo shoots.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How does the quality slider work?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'The slider sets compression quality from 30% (smallest files) to 100% (best quality). Lower quality works well for photos, higher quality suits text and graphics.',
+      },
+    },
   ],
 };
 
 export const metadata: Metadata = {
   title: 'WebP Neo — Free Image to WebP Converter (Private & Secure)',
   description:
-    'Convert PNG, JPG, BMP, GIF, AVIF and TIFF to WebP instantly. 100% free, private, and secure — all processing happens in your browser. No uploads, no sign-up, no limits.',
+    'Convert PNG, JPG, BMP, GIF, AVIF and TIFF to WebP — 100% free and private, all in your browser. No uploads, no sign-up, no limits.',
   metadataBase: new URL(siteUrl),
   alternates: {
     canonical: '/',
@@ -101,7 +141,7 @@ export const metadata: Metadata = {
     siteName: 'WebP Neo',
     title: 'WebP Neo — Free Image to WebP Converter',
     description:
-      'Convert PNG, JPG, BMP, GIF, AVIF and TIFF to WebP instantly. 100% free and private — all processing happens in your browser.',
+      'Convert PNG, JPG, BMP, GIF, AVIF and TIFF to WebP — 100% free and private, all in your browser.',
     images: [
       {
         url: '/og-image.png',
@@ -115,11 +155,12 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'WebP Neo — Free Image to WebP Converter',
     description:
-      'Convert PNG, JPG, BMP, GIF, AVIF and TIFF to WebP instantly. 100% free and private — all processing happens in your browser.',
+      'Convert PNG, JPG, BMP, GIF, AVIF and TIFF to WebP — 100% free and private, all in your browser.',
     images: ['/og-image.png'],
   },
   icons: {
     icon: '/favicon.svg',
+    apple: '/apple-touch-icon.png',
   },
 };
 
