@@ -50,12 +50,12 @@ interface PersistedSettings {
 function loadSettings(): PersistedSettings {
   try {
     const raw = localStorage.getItem(SETTINGS_KEY);
-    if (!raw) return { quality: 82, maxDimension: 0 };
+    if (!raw) return { quality: 80, maxDimension: 0 };
     const parsed = JSON.parse(raw) as Partial<PersistedSettings>;
     const quality = Math.round(Number(parsed.quality));
     const maxDimension = Number(parsed.maxDimension);
     return {
-      quality: Number.isFinite(quality) ? clamp(quality, 30, 100) : 82,
+      quality: Number.isFinite(quality) ? clamp(quality, 30, 100) : 80,
       maxDimension: MAX_DIMENSION_OPTIONS.some(
         (option) => option.value === maxDimension,
       )
@@ -63,13 +63,13 @@ function loadSettings(): PersistedSettings {
         : 0,
     };
   } catch {
-    return { quality: 82, maxDimension: 0 };
+    return { quality: 80, maxDimension: 0 };
   }
 }
 
 export default function Converter() {
   const [items, setItems] = useState<ImageItem[]>([]);
-  const [quality, setQuality] = useState(82);
+  const [quality, setQuality] = useState(80);
   const [maxDimension, setMaxDimension] = useState(0);
   const [isConverting, setIsConverting] = useState(false);
   const [zip, setZip] = useState<{ url: string; size: number } | null>(null);

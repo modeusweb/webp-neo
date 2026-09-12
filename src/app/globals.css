@@ -55,8 +55,8 @@ body {
   background: linear-gradient(
     to right,
     #8b5cf6 0,
-    #8b5cf6 calc(var(--range-pos, 0.82) * (100% - 18px) + 9px),
-    rgba(255, 255, 255, 0.14) calc(var(--range-pos, 0.82) * (100% - 18px) + 9px),
+    #8b5cf6 calc(var(--range-pos, 0.8) * (100% - 18px) + 9px),
+    rgba(255, 255, 255, 0.14) calc(var(--range-pos, 0.8) * (100% - 18px) + 9px),
     rgba(255, 255, 255, 0.14) 100%
   );
 }
