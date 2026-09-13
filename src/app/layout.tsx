@@ -126,6 +126,18 @@ export const metadata: Metadata = {
   title: 'WebP Neo — Free Image to WebP Converter (Private & Secure)',
   description:
     'Convert PNG, JPG, BMP, GIF, AVIF and TIFF to WebP — 100% free and private, all in your browser. No uploads, no sign-up, no limits.',
+  keywords: [
+    'webp converter',
+    'convert to webp',
+    'png to webp',
+    'jpg to webp',
+    'image converter',
+    'batch image converter',
+    'free image converter',
+    'конвертер webp',
+    'png в webp',
+    'jpg в webp',
+  ],
   metadataBase: new URL(siteUrl),
   alternates: {
     canonical: '/',
