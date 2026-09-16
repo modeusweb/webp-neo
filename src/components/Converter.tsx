@@ -47,10 +47,12 @@ interface PersistedSettings {
   maxDimension: number;
 }
 
+const DEFAULT_SETTINGS: PersistedSettings = { quality: 80, maxDimension: 0 };
+
 function loadSettings(): PersistedSettings {
   try {
     const raw = localStorage.getItem(SETTINGS_KEY);
-    if (!raw) return { quality: 80, maxDimension: 0 };
+    if (!raw) return DEFAULT_SETTINGS;
     const parsed = JSON.parse(raw) as Partial<PersistedSettings>;
     const quality = Math.round(Number(parsed.quality));
     const maxDimension = Number(parsed.maxDimension);
@@ -63,14 +65,15 @@ function loadSettings(): PersistedSettings {
         : 0,
     };
   } catch {
-    return { quality: 80, maxDimension: 0 };
+    return DEFAULT_SETTINGS;
   }
 }
 
 export default function Converter() {
   const [items, setItems] = useState<ImageItem[]>([]);
-  const [quality, setQuality] = useState(80);
-  const [maxDimension, setMaxDimension] = useState(0);
+  const [quality, setQuality] = useState(DEFAULT_SETTINGS.quality);
+  const [maxDimension, setMaxDimension] = useState(DEFAULT_SETTINGS.maxDimension);
+  const [settingsHydrated, setSettingsHydrated] = useState(false);
   const [isConverting, setIsConverting] = useState(false);
   const [zip, setZip] = useState<{ url: string; size: number } | null>(null);
   const [rejections, setRejections] = useState<RejectedFile[]>([]);
@@ -80,8 +83,11 @@ export default function Converter() {
 
   /* ---------- persistence & unload guard ---------- */
 
-  // Remember quality / max dimension between visits
+  // Remember quality / max dimension between visits.
+  // Skipped until the stored values have been read (see the effect below) —
+  // otherwise the default 80% would be written over the stored value on mount.
   useEffect(() => {
+    if (!settingsHydrated) return;
     try {
       localStorage.setItem(
         SETTINGS_KEY,
@@ -90,12 +96,13 @@ export default function Converter() {
     } catch {
       /* storage unavailable — settings simply won't persist */
     }
-  }, [quality, maxDimension]);
+  }, [quality, maxDimension, settingsHydrated]);
   // Load persisted quality / max dimension after mount (SSR-safe, avoids hydration mismatch)
   useEffect(() => {
     const settings = loadSettings();
     setQuality(settings.quality);
     setMaxDimension(settings.maxDimension);
+    setSettingsHydrated(true);
   }, []);
 
   // Warn before leaving while a batch is still running
