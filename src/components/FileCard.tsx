@@ -9,6 +9,7 @@ import {
 import {
   ArrowDownTrayIcon,
   DocumentTextIcon,
+  MagnifyingGlassPlusIcon,
   PhotoIcon,
   TrashIcon,
 } from '@heroicons/react/24/outline';
@@ -20,6 +21,7 @@ interface FileCardProps {
   disabled: boolean;
   onRemove: (id: string) => void;
   onDownload: (item: ImageItem) => void;
+  onOpen: (id: string) => void;
 }
 
 const STATUS_STYLES: Record<
@@ -41,6 +43,7 @@ export function FileCard({
   disabled,
   onRemove,
   onDownload,
+  onOpen,
 }: FileCardProps) {
   const tone = STATUS_STYLES[item.status];
   const isTiff = ['tif', 'tiff'].includes(
@@ -66,20 +69,34 @@ export function FileCard({
 
   return (
     <div className="flex w-full items-center gap-4 rounded-xl border border-white/10 bg-slate-900/60 p-4 shadow-lg shadow-slate-900/40 transition-colors hover:border-white/20">
-      <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-lg border border-white/10 bg-slate-800">
-        {previewSrc ? (
+      {previewSrc ? (
+        <button
+          type="button"
+          title="View full image"
+          aria-label={`View ${item.stem} full size`}
+          onClick={() => onOpen(item.id)}
+          className="group relative h-14 w-14 shrink-0 cursor-zoom-in overflow-hidden rounded-lg border border-white/10 bg-slate-800 transition-all duration-200 hover:border-violet-400/60 hover:shadow-lg hover:shadow-violet-500/25 focus-visible:border-violet-400"
+        >
           <img
             src={previewSrc}
             alt=""
             loading="lazy"
-            className="h-full w-full object-cover"
+            className="h-full w-full object-cover transition-transform duration-300 ease-out group-hover:scale-110"
           />
-        ) : (
+          <span
+            aria-hidden="true"
+            className="absolute inset-0 flex items-center justify-center bg-slate-950/55 opacity-0 transition-opacity duration-200 group-hover:opacity-100 group-focus-visible:opacity-100"
+          >
+            <MagnifyingGlassPlusIcon className="h-5 w-5 text-violet-200" />
+          </span>
+        </button>
+      ) : (
+        <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-lg border border-white/10 bg-slate-800">
           <div className="flex h-full w-full items-center justify-center">
             <DocumentTextIcon className="h-7 w-7 text-slate-500" />
           </div>
-        )}
-      </div>
+        </div>
+      )}
 
       <div className="min-w-0 flex-1">
         <div className="flex items-center gap-2">

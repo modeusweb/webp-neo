@@ -111,3 +111,32 @@ body {
   scrollbar-width: thin;
   scrollbar-color: rgba(148, 163, 184, 0.45) transparent;
 }
+
+/* --- Image lightbox (yet-another-react-lightbox) --- */
+
+.webp-lightbox .yarl__slide_captions_container {
+  background: rgba(2, 6, 23, 0.75);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  font-size: 13px;
+  color: #e2e8f0;
+}
+
+.webp-lightbox .yarl__button {
+  transition:
+    background-color 0.15s ease,
+    color 0.15s ease,
+    opacity 0.15s ease,
+    transform 0.15s ease;
+}
+
+.webp-lightbox .yarl__button:hover {
+  background-color: rgba(139, 92, 246, 0.4);
+  color: #ddd6fe;
+}
+
+.webp-lightbox .yarl__counter {
+  background: rgba(2, 6, 23, 0.75);
+  font-variant-numeric: tabular-nums;
+  color: #e2e8f0;
+}

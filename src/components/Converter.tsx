@@ -5,6 +5,7 @@ import type { ImageItem } from '../types';
 import {
   clamp,
   compressionRatio,
+  extOf,
   formatBytes,
   plural,
   rejectionMessage,
@@ -15,6 +16,7 @@ import {
 import type { RejectedFile } from '../lib/format';
 import { convertImage } from '../lib/converter';
 import { buildZipArchive } from '../lib/zip';
+import { ImageLightbox } from './ImageLightbox';
 import { DropZone } from './DropZone';
 import { FileCard } from './FileCard';
 import { ProgressBar } from './ProgressBar';
@@ -78,6 +80,8 @@ export default function Converter() {
   const [zip, setZip] = useState<{ url: string; size: number } | null>(null);
   const [rejections, setRejections] = useState<RejectedFile[]>([]);
   const [copied, setCopied] = useState(false);
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [lightboxIndex, setLightboxIndex] = useState(0);
   const zipNameRef = useRef(`webp-${new Date().toISOString().slice(0, 10)}.zip`);
   const walletAddress = 'TQZxZ2Ygh6RvkZDi5qswq8uF9KbDbDw9bo';
 
@@ -322,6 +326,27 @@ export default function Converter() {
     doneItems.reduce((sum, item) => sum + (item.result?.size ?? 0), 0),
   );
 
+  /* ---------- image lightbox ---------- */
+
+  // Images that can be shown full-size: converted results (WebP), or —
+  // for files not converted yet — the original preview. TIFF previews
+  // cannot be rendered by browsers, so they stay out of the gallery.
+  const lightboxImages = items.flatMap((item) => {
+    const isTiff = ['tif', 'tiff'].includes(extOf(item.file.name));
+    const src = item.result?.url ?? (isTiff ? null : item.previewUrl);
+    return src ? [{ id: item.id, src, stem: item.stem }] : [];
+  });
+
+  const openLightbox = useCallback(
+    (id: string) => {
+      const index = lightboxImages.findIndex((image) => image.id === id);
+      if (index === -1) return;
+      setLightboxIndex(index);
+      setLightboxOpen(true);
+    },
+    [lightboxImages],
+  );
+
   /* ---------- markup ---------- */
 
   return (
@@ -533,6 +558,7 @@ export default function Converter() {
                       disabled={isConverting}
                       onRemove={removeItem}
                       onDownload={downloadSingle}
+                      onOpen={openLightbox}
                     />
                   </li>
                 ))}
@@ -545,6 +571,14 @@ export default function Converter() {
               Add images and hit “Convert” — free, private, no sign-up
             </p>
           )}
+
+          <ImageLightbox
+            open={lightboxOpen}
+            index={lightboxIndex}
+            images={lightboxImages}
+            onClose={() => setLightboxOpen(false)}
+            onIndexChange={setLightboxIndex}
+          />
         </>
   );
 }

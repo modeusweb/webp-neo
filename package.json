@@ -15,7 +15,8 @@
     "next": "^16.3.5",
     "react": "^19.3.0",
     "react-dom": "^19.3.0",
-    "utif2": "^4.1.0"
+    "utif2": "^4.1.0",
+    "yet-another-react-lightbox": "^3.32.2"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.3.3",
