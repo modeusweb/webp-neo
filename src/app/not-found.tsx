@@ -53,7 +53,9 @@ export default function NotFound() {
         <Link
           href="/"
           style={{
-            display: 'inline-block',
+            display: 'inline-flex',
+            alignItems: 'center',
+            justifyContent: 'center',
             marginTop: 20,
             padding: '10px 20px',
             borderRadius: 12,

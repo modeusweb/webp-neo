@@ -68,14 +68,14 @@ export function FileCard({
         : item.previewUrl;
 
   return (
-    <div className="flex w-full items-center gap-4 rounded-xl border border-white/10 bg-slate-900/60 p-4 shadow-lg shadow-slate-900/40 transition-colors hover:border-white/20">
+    <div className="flex w-full flex-wrap items-center gap-x-3 gap-y-2 rounded-xl border border-white/10 bg-slate-900/60 p-3 shadow-lg shadow-slate-900/40 transition-colors hover:border-white/20 sm:gap-x-4 sm:gap-y-0 sm:p-4">
       {previewSrc ? (
         <button
           type="button"
           title="View full image"
           aria-label={`View ${item.stem} full size`}
           onClick={() => onOpen(item.id)}
-          className="group relative h-14 w-14 shrink-0 cursor-zoom-in overflow-hidden rounded-lg border border-white/10 bg-slate-800 transition-all duration-200 hover:border-violet-400/60 hover:shadow-lg hover:shadow-violet-500/25 focus-visible:border-violet-400"
+          className="group relative flex h-14 w-14 shrink-0 cursor-zoom-in items-center justify-center overflow-hidden rounded-lg border border-white/10 bg-slate-800 transition-all duration-200 hover:border-violet-400/60 hover:shadow-lg hover:shadow-violet-500/25 focus-visible:border-violet-400"
         >
           <img
             src={previewSrc}
@@ -126,7 +126,7 @@ export function FileCard({
         )}
       </div>
 
-      <div className="flex shrink-0 items-center gap-1.5">
+      <div className="flex w-full shrink-0 items-center justify-center gap-1.5 border-t border-white/10 pt-2.5 sm:w-auto sm:border-t-0 sm:pt-0">
         {item.status === 'done' && item.result && (
           <>
             <span

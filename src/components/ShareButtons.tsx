@@ -70,7 +70,7 @@ export function ShareButtons() {
           <button
             type="button"
             onClick={() => void handleNativeShare()}
-            className="cursor-pointer rounded-full border border-violet-500/50 px-3.5 py-1.5 text-xs font-medium text-violet-300 transition-colors hover:bg-violet-500/20"
+            className="inline-flex cursor-pointer items-center justify-center rounded-full border border-violet-500/50 px-3.5 py-1.5 text-xs font-medium text-violet-300 transition-colors hover:bg-violet-500/20"
           >
             Share…
           </button>
@@ -81,7 +81,7 @@ export function ShareButtons() {
             href={link.href}
             target="_blank"
             rel="noopener noreferrer"
-            className={`rounded-full border px-3.5 py-1.5 text-xs font-medium transition-colors ${link.styles}`}
+            className={`inline-flex items-center justify-center rounded-full border px-3.5 py-1.5 text-xs font-medium transition-colors ${link.styles}`}
           >
             {link.name}
           </a>

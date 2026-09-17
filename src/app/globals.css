@@ -27,6 +27,44 @@ body {
   outline-offset: 2px;
 }
 
+/* --- Brand wordmark (WebP Neo in the hero heading) --- */
+
+/* Same violet → fuchsia → amber ramp as the logo tile, applied to the
+   text itself, plus a slow sheen drift and a soft fuchsia glow. */
+.brand-wordmark {
+  background-image: linear-gradient(
+    100deg,
+    #a78bfa 0%,
+    #e879f9 26%,
+    #fbbf24 50%,
+    #e879f9 74%,
+    #a78bfa 100%
+  );
+  background-size: 220% 100%;
+  background-position: 0% 50%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 0 22px rgba(217, 70, 239, 0.3));
+  animation: brand-shine 9s ease-in-out infinite;
+}
+
+@keyframes brand-shine {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .brand-wordmark {
+    animation: none;
+  }
+}
+
 /* --- Quality slider --- */
 
 .quality-range {

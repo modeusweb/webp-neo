@@ -391,7 +391,7 @@ export default function Converter() {
                 type="button"
                 aria-label="Dismiss"
                 onClick={() => setRejections([])}
-                className="cursor-pointer rounded-md p-1 transition-colors hover:bg-amber-500/15"
+                className="flex cursor-pointer items-center justify-center rounded-md p-1 transition-colors hover:bg-amber-500/15"
               >
                 <XMarkIcon className="h-4 w-4" />
               </button>
@@ -441,13 +441,13 @@ export default function Converter() {
                     </div>
                   </div>
 
-                  <div className="flex flex-col items-end gap-2 sm:items-center">
+                  <div className="flex w-full flex-col items-stretch gap-2 sm:w-auto sm:items-center">
                     <button
                       type="button"
                       onClick={() => void convertAll()}
                       disabled={isConverting || totalCount === 0}
                       className={[
-                        'flex cursor-pointer items-center gap-2 rounded-xl px-5 py-3 text-sm font-bold text-white transition-all active:scale-[0.98]',
+                        'flex w-full cursor-pointer items-center justify-center gap-2 rounded-xl px-5 py-3 text-sm font-bold text-white transition-all active:scale-[0.98] sm:w-auto',
                         isConverting
                           ? 'cursor-wait bg-white/[0.08] text-slate-300'
                           : 'bg-gradient-to-r from-violet-500 to-fuchsia-500 shadow-lg shadow-fuchsia-500/30 hover:shadow-fuchsia-500/50 hover:brightness-110',
@@ -464,7 +464,7 @@ export default function Converter() {
                       type="button"
                       onClick={clearAll}
                       disabled={isConverting}
-                      className="cursor-pointer px-3 py-1.5 text-xs font-medium text-slate-400 transition-colors hover:bg-white/[0.06] hover:text-rose-300 disabled:cursor-not-allowed disabled:opacity-50"
+                      className="flex w-full cursor-pointer items-center justify-center px-3 py-1.5 text-xs font-medium text-slate-400 transition-colors hover:bg-white/[0.06] hover:text-rose-300 disabled:cursor-not-allowed disabled:opacity-50 sm:w-auto"
                     >
                       Clear list
                     </button>
@@ -518,7 +518,7 @@ export default function Converter() {
                       <a
                         href={zip.url}
                         download={zipNameRef.current}
-                        className="flex cursor-pointer shrink-0 items-center gap-2 rounded-xl bg-gradient-to-r from-violet-500 to-fuchsia-500 px-5 py-3 text-sm font-bold text-white shadow-lg shadow-fuchsia-500/30 transition-all hover:brightness-110 active:scale-[0.98]"
+                        className="flex cursor-pointer shrink-0 items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-violet-500 to-fuchsia-500 px-5 py-3 text-sm font-bold text-white shadow-lg shadow-fuchsia-500/30 transition-all hover:brightness-110 active:scale-[0.98]"
                       >
                         <ArchiveBoxIcon className="h-5 w-5" />
                         Download archive · {formatBytes(zip.size)}
