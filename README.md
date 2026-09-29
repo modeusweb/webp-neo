@@ -6,7 +6,7 @@ Convert PNG, JPG, BMP, GIF, AVIF and TIFF images to WebP without uploading anyth
 
 ![WebP Neo](https://img.shields.io/badge/WebP-Neo-8b5cf6?style=flat-square) ![License](https://img.shields.io/badge/license-MIT-green?style=flat-square) ![Free](https://img.shields.io/badge/price-free-10a34f?style=flat-square)
 
-> **🚀 Live demo: [webp-neo.vercel.app](https://webp-neo.vercel.app/)**
+> **🚀 Live demo: [modeusweb.github.io/webp-neo](https://modeusweb.github.io/webp-neo/)**
 
 ---
 
@@ -29,8 +29,9 @@ Convert PNG, JPG, BMP, GIF, AVIF and TIFF images to WebP without uploading anyth
 | Layer | Technology |
 |---|---|
 | Framework | Next.js 16 (App Router) + React 19 + TypeScript 7 |
-| Rendering | Full SSR / SSG — content is server-rendered for SEO, the converter is a client component |
-| Build | Next.js (Turbopack) |
+| Rendering | Static export (`output: 'export'`) — SEO content is pre-rendered to HTML, the converter is a client component |
+| Build | Next.js 16 (App Router, Turbopack) |
+| Hosting | GitHub Pages via GitHub Actions |
 | Styling | Tailwind CSS 4 |
 | Icons | Heroicons |
 | WebP encoding | Native `canvas.toBlob` + `@stacksjs/ts-webp` fallback |
@@ -62,21 +63,40 @@ npm install
 npm run dev
 ```
 
-Open [http://localhost:5173](http://localhost:5173) in your browser.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-### Production Build
+### Production Build (static export)
 
 ```bash
 npm run build
 ```
 
-The optimized build is generated into the `.next/` directory.
+The project uses `output: 'export'`, so the fully static site is generated into
+the `out/` directory.
 
-### Run the Production Server
+### Preview the Export Locally
 
 ```bash
 npm run start
 ```
+
+---
+
+## Deployment
+
+The site is deployed automatically to **GitHub Pages** via GitHub Actions
+(`.github/workflows/deploy.yml`):
+
+1. Push to `master` (or run the workflow manually from the Actions tab).
+2. The workflow builds the static export with `NEXT_PUBLIC_BASE_PATH=/webp-neo`.
+3. The `out/` folder is uploaded as a Pages artifact and published to
+   `https://modeusweb.github.io/webp-neo/`.
+
+In the repository settings (**Settings → Pages → Build and deployment**) the
+source must be set to **GitHub Actions**.
+
+To use a custom domain instead, set the repository variable `BASE_PATH` to an
+empty value in **Settings → Secrets and variables → Actions**.
 
 ---
 

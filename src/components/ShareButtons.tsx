@@ -2,7 +2,8 @@
 
 import { useEffect, useState } from 'react';
 
-const PAGE_URL = 'https://webp-neo.vercel.app/';
+const PAGE_URL =
+  process.env.NEXT_PUBLIC_SITE_URL ?? 'https://modeusweb.github.io/webp-neo/';
 const SHARE_TEXT =
   'WebP Neo — free, private image to WebP converter. Everything runs in your browser, no uploads.';
 const enc = encodeURIComponent;

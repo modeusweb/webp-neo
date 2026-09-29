@@ -2,7 +2,8 @@ import type { Metadata, Viewport } from 'next';
 import type { ReactNode } from 'react';
 import './globals.css';
 
-const siteUrl = 'https://webp-neo.vercel.app/';
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ?? 'https://modeusweb.github.io/webp-neo/';
 
 const webApplicationSchema = {
   '@context': 'https://schema.org',
@@ -140,7 +141,7 @@ export const metadata: Metadata = {
   ],
   metadataBase: new URL(siteUrl),
   alternates: {
-    canonical: '/',
+    canonical: siteUrl,
   },
   robots: {
     index: true,
@@ -160,7 +161,7 @@ export const metadata: Metadata = {
       'Convert PNG, JPG, BMP, GIF, AVIF and TIFF to WebP — 100% free and private, all in your browser.',
     images: [
       {
-        url: '/og-image.png',
+        url: `${siteUrl}og-image.png`,
         width: 1200,
         height: 630,
         alt: 'WebP Neo — free image to WebP converter interface',
@@ -172,27 +173,27 @@ export const metadata: Metadata = {
     title: 'WebP Neo — Free Image to WebP Converter',
     description:
       'Convert PNG, JPG, BMP, GIF, AVIF and TIFF to WebP — 100% free and private, all in your browser.',
-    images: ['/og-image.png'],
+    images: [`${siteUrl}og-image.png`],
   },
   icons: {
     icon: [
       {
-        url: '/favicon.ico',
+        url: `${siteUrl}favicon.ico`,
         sizes: 'any',
         type: 'image/x-icon',
       },
       {
-        url: '/favicon-120x120.png',
+        url: `${siteUrl}favicon-120x120.png`,
         sizes: '120x120',
         type: 'image/png',
       },
       {
-        url: '/favicon.svg',
+        url: `${siteUrl}favicon.svg`,
         type: 'image/svg+xml',
       },
     ],
-    shortcut: '/favicon.ico',
-    apple: '/apple-touch-icon.png',
+    shortcut: `${siteUrl}favicon.ico`,
+    apple: `${siteUrl}apple-touch-icon.png`,
   },
 };
 

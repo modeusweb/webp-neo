@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://webp-neo.vercel.app/sitemap.xml
+Sitemap: https://modeusweb.github.io/webp-neo/sitemap.xml
