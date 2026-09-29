@@ -82,24 +82,6 @@ npm run start
 
 ---
 
-## Deployment
-
-The site is deployed automatically to **GitHub Pages** via GitHub Actions
-(`.github/workflows/deploy.yml`):
-
-1. Push to `master` (or run the workflow manually from the Actions tab).
-2. The workflow builds the static export with `NEXT_PUBLIC_BASE_PATH=/webp-neo`.
-3. The `out/` folder is uploaded as a Pages artifact and published to
-   `https://modeusweb.github.io/webp-neo/`.
-
-In the repository settings (**Settings → Pages → Build and deployment**) the
-source must be set to **GitHub Actions**.
-
-To use a custom domain instead, set the repository variable `BASE_PATH` to an
-empty value in **Settings → Secrets and variables → Actions**.
-
----
-
 ## Usage
 
 1. **Add images** — drag & drop files or click to browse your computer
