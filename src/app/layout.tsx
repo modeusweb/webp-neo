@@ -148,8 +148,7 @@ export const metadata: Metadata = {
     follow: true,
   },
   verification: {
-    google: 'w_s1YAdGDmNMm19tV4F6fl_4o15nDgnZGLM8ledX-f8',
-    yandex: 'e2441bdf3afdb12f',
+    google: '0D59jG7JMUj7sXOpK7E1--vZ0ptpdRe0TBSvBKaUGwM',
   },
   openGraph: {
     type: 'website',
